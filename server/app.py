@@ -261,8 +261,8 @@ def evaluate_agent(task_id: str = "task_medium"):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-def serve():
+def main():
     uvicorn.run("server.app:app", host="0.0.0.0", port=7860)
 
-if __name__ == "__main__":
-    serve()
+if __name__ == '__main__':
+    main()
