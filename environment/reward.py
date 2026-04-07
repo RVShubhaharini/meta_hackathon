@@ -116,6 +116,9 @@ def compute_reward(
     is_ambiguous: bool = False,
     bias_pair_id: str | None = None,
     bias_decisions: dict | None = None,
+    user_reputation: float = 1.0,
+    lang_pair_id: str | None = None,
+    lang_decisions: dict | None = None,
 ) -> tuple[float, RewardBreakdown]:
     """
     Compute reward for a single moderation step.
@@ -160,6 +163,9 @@ def compute_reward(
     missed_penalty = 0.0
     unnecessary_removal_penalty = 0.0
     bias_penalty = 0.0
+    cross_lingual_penalty = 0.0
+
+    # Removed conf_multiplier since Action schema is strict
 
     # False positive: safe content flagged or removed
     if truth_cat == ContentCategory.SAFE and pred_act in {
@@ -187,30 +193,50 @@ def compute_reward(
         # Register this decision for the pair
         if prev is None:
             bias_decisions[bias_pair_id] = pred_act
+            
+    # Cross-lingual consistency
+    if lang_pair_id and lang_decisions is not None:
+        prev_lang = lang_decisions.get(lang_pair_id)
+        if prev_lang is not None and prev_lang != pred_act:
+            cross_lingual_penalty = 1.0
+        if prev_lang is None:
+            lang_decisions[lang_pair_id] = pred_act
+
+    # --- Reputation Modifiers ----------------------------------------------
+    reputation_bonus = 0.0
+    if user_reputation < 0.3 and truth_cat in HARMFUL_CATEGORIES and pred_act == ModerationAction.REMOVE:
+        reputation_bonus = 0.10
+
+    reputation_penalty = 0.0
+    if user_reputation > 0.8 and truth_cat == ContentCategory.SAFE and pred_act == ModerationAction.REMOVE:
+        reputation_penalty = 0.20
+
+    reputation_adjustment = reputation_bonus - reputation_penalty
 
     # --- Weighted sum ------------------------------------------------------
-    raw = (
-        0.40 * cls_score
-        + 0.25 * sev_score
-        + 0.25 * act_score
-        + 0.10 * esc_bonus
-        - 0.30 * fp_penalty
-        - 0.40 * missed_penalty
-        - 0.20 * unnecessary_removal_penalty
-        - 0.25 * bias_penalty
-    )
+    c_score = 0.40 * cls_score
+    s_score = 0.20 * sev_score
+    a_score = 0.30 * act_score
+    
+    # Dynamic reward: increase escalation bonus for ambiguous cases
+    dynamic_e = 1.5 if (is_ambiguous and esc_bonus > 0.0 and truth_cat in HARMFUL_CATEGORIES) else 1.0
+    e_score = 0.10 * esc_bonus * dynamic_e
+    
+    pen = (fp_penalty * 0.30) + (missed_penalty * 0.40) + (unnecessary_removal_penalty * 0.20) + (bias_penalty * 0.20)
+
+    base_score = c_score + s_score + a_score + e_score
+    raw = base_score - pen - (cross_lingual_penalty * 0.25) + reputation_adjustment
     reward = max(0.0, min(1.0, raw))
 
     breakdown = RewardBreakdown(
         total=round(reward, 4),
-        classification_score=round(cls_score, 4),
-        severity_score=round(sev_score, 4),
-        action_score=round(act_score, 4),
-        escalation_bonus=round(esc_bonus, 4),
-        false_positive_penalty=round(fp_penalty * 0.30, 4),
-        missed_harmful_penalty=round(missed_penalty * 0.40, 4),
-        unnecessary_removal_penalty=round(unnecessary_removal_penalty * 0.20, 4),
-        bias_penalty=round(bias_penalty * 0.25, 4),
+        classification_score=round(c_score, 4),
+        severity_score=round(s_score, 4),
+        action_score=round(a_score, 4),
+        escalation_score=round(e_score, 4),
+        reputation_adjustment=round(reputation_adjustment, 4),
+        cross_lingual_penalty=round((cross_lingual_penalty * 0.25), 4),
+        penalties=round(pen, 4),
     )
 
     return reward, breakdown

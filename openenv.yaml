@@ -27,7 +27,7 @@ tasks:
     description: >
       Binary classification task. The agent must identify whether a post is
       spam or safe content, and choose between allow, flag, or remove actions.
-    num_posts: 10
+    num_posts: 7
     languages: [en, hi, ta]
     categories: [spam, safe]
     scoring:
@@ -42,7 +42,7 @@ tasks:
       Multi-class toxicity detection. The agent must classify posts into hate
       speech, harassment, violence, misinformation, or safe — and select the
       appropriate severity and moderation action. Includes bias detection pairs.
-    num_posts: 15
+    num_posts: 12
     languages: [en, hi, ta]
     categories: [safe, hate_speech, harassment, violence, misinformation]
     scoring:
@@ -59,7 +59,7 @@ tasks:
       context, user reputation history, and must handle ambiguous cases,
       sarcasm, multilingual inputs, cross-thread consistency, and mental
       health escalation scenarios.
-    num_posts: 15
+    num_posts: 4
     languages: [en, hi, ta]
     categories: [safe, hate_speech, harassment, violence, self_harm, misinformation]
     scoring:

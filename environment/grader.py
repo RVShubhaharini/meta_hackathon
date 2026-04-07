@@ -24,6 +24,7 @@ class BaseGrader:
     def __init__(self) -> None:
         self.bias_decisions: Dict[str, ModerationAction] = {}
         self.thread_decisions: Dict[str, List[Tuple[str, ModerationAction]]] = {}
+        self.lang_decisions: Dict[str, ModerationAction] = {}
 
     def _check_thread_consistency(
         self,
@@ -87,6 +88,7 @@ class EasyGrader(BaseGrader):
             is_ambiguous=record.get("is_ambiguous", False),
             bias_pair_id=None,
             bias_decisions=None,
+            user_reputation=record.get("user_reputation", 1.0),
         )
         return reward, breakdown.model_dump()
 
@@ -109,6 +111,9 @@ class MediumGrader(BaseGrader):
             is_ambiguous=record.get("is_ambiguous", False),
             bias_pair_id=record.get("bias_pair_id"),
             bias_decisions=self.bias_decisions,
+            user_reputation=record.get("user_reputation", 1.0),
+            lang_pair_id=record.get("lang_pair_id"),
+            lang_decisions=self.lang_decisions,
         )
         return reward, breakdown.model_dump()
 
@@ -137,6 +142,9 @@ class HardGrader(BaseGrader):
             is_ambiguous=record.get("is_ambiguous", False),
             bias_pair_id=record.get("bias_pair_id"),
             bias_decisions=self.bias_decisions,
+            user_reputation=record.get("user_reputation", 1.0),
+            lang_pair_id=record.get("lang_pair_id"),
+            lang_decisions=self.lang_decisions,
         )
 
         # Apply thread consistency penalty

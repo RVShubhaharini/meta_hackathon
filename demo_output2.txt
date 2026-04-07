@@ -1,0 +1,597 @@
+
+============================================================
+Running task: task_easy
+============================================================
+
+============================================================
+Running task: task_medium
+============================================================
+============================================================
+ AI CONTENT MODERATION OPENENV — INFERENCE DEMO
+ Model: claude-sonnet (mock) | Tasks: easy + medium + hard
+============================================================
+[START]
+Environment initialized
+
+
+[STEP]
+Post ID: easy_001
+Language: en
+User Reputation: 0.1000
+
+[MODEL_DECISION]
+classification=spam | severity=medium | action=remove
+
+[RATIONALE]
+Keyword triggers detected: urgency patterns, suspicious links, financial bait. User history shows 30 prior flags with reputation 0.10. High confidence spam — action: remove.
+
+[REWARD]
+Total Score: 0.9500
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  +0.1000  (low-rep removal bonus)
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_002
+Language: en
+User Reputation: 0.9500
+
+[MODEL_DECISION]
+classification=spam | severity=low | action=remove
+
+[RATIONALE]
+High-reputation user (rep=0.95) content wrongly actioned. Reputation trust penalty applied: -0.20. Over-moderation flagged.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+  classification_score:   0.0000
+  severity_score:         0.1000
+  action_score:           0.0000
+  escalation_score:       0.0000
+  reputation_adjustment:  -0.2000  (high-rep over-moderation penalty)
+  penalties:              0.3000
+
+[STEP]
+Post ID: easy_003
+Language: en
+User Reputation: 0.3000
+
+[MODEL_DECISION]
+classification=spam | severity=medium | action=remove
+
+[RATIONALE]
+Keyword triggers detected: urgency patterns, suspicious links, financial bait. User history shows 150 prior flags with reputation 0.30. High confidence spam — action: remove.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_004
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_005
+Language: en
+User Reputation: 0.3000
+
+[MODEL_DECISION]
+classification=spam | severity=high | action=remove
+
+[RATIONALE]
+Keyword triggers detected: urgency patterns, suspicious links, financial bait. User history shows 4 prior flags with reputation 0.30. High confidence spam — action: remove.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_006
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_007
+Language: hi
+User Reputation: 0.3000
+
+[MODEL_DECISION]
+classification=spam | severity=medium | action=remove
+
+[RATIONALE]
+Keyword triggers detected: urgency patterns, suspicious links, financial bait. User history shows 8 prior flags with reputation 0.30. High confidence spam — action: remove.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_008
+Language: ta
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_009
+Language: en
+User Reputation: 0.7000
+
+[MODEL_DECISION]
+classification=spam | severity=low | action=flag
+
+[RATIONALE]
+Keyword triggers detected: urgency patterns, suspicious links, financial bait. User history shows 10 prior flags with reputation 0.70. High confidence spam — action: flag.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: easy_010
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[END]
+Final Score: 0.7950
+
+--------------------------------------------------
+[STATE_SUMMARY]
+  Total Posts Processed:  10
+  Correct Moderations:    9
+  False Positives:        1
+  Missed Harmful Content: 0
+  Bias Violations:        0  (Identity)
+  Cross-Lingual Errors:   0
+  Escalation Cases:       0
+  Precision:              0.8333
+  Recall:                 1.0000
+  F1 Score:               0.9091
+--------------------------------------------------
+[START]
+Environment initialized
+
+
+[STEP]
+Post ID: med_001
+Language: en
+User Reputation: 0.3000
+
+[MODEL_DECISION]
+classification=hate_speech | severity=high | action=remove
+
+[RATIONALE]
+Identity-targeted language detected in en corpus. Severity high based on dehumanization vectors. User has hate_speech, harassment prior violations — action: remove.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_002
+Language: en
+User Reputation: 0.4000
+
+[MODEL_DECISION]
+classification=hate_speech | severity=high | action=remove
+
+[RATIONALE]
+Identity-targeted language detected in en corpus. Severity high based on dehumanization vectors. User has hate_speech prior violations — action: remove.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_003
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_004
+Language: en
+User Reputation: 0.3000
+
+[MODEL_DECISION]
+classification=harassment | severity=high | action=remove
+
+[RATIONALE]
+Directed aggression pattern matched. Context analysis of thread 'general' indicates escalating hostility. Reputation 0.30 factored. Action: remove.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_005
+Language: hi
+User Reputation: 0.4556
+
+[MODEL_DECISION]
+classification=hate_speech | severity=high | action=remove
+
+[RATIONALE]
+Identity-targeted language detected in hi corpus. Severity high based on dehumanization vectors. User has hate_speech prior violations — action: remove.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_006
+Language: ta
+User Reputation: 0.3833
+
+[MODEL_DECISION]
+classification=hate_speech | severity=high | action=remove
+
+[RATIONALE]
+Identity-targeted language detected in ta corpus. Severity high based on dehumanization vectors. User has hate_speech, hate_speech prior violations — action: remove.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_007
+Language: en
+User Reputation: 0.4833
+
+[MODEL_DECISION]
+classification=violence | severity=high | action=remove
+
+[RATIONALE]
+Explicit threat language detected. NLP threat-classifier confidence >0.90. Thread escalation from verbal to physical threat. Immediate remove required.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_008
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_009
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=low | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_010
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_011
+Language: en
+User Reputation: 0.1545
+
+[MODEL_DECISION]
+classification=hate_speech | severity=high | action=remove
+
+[RATIONALE]
+Identity-targeted language detected in en corpus. Severity high based on dehumanization vectors. User has hate_speech, hate_speech, harassment prior violations — action: remove.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  +0.1000  (low-rep removal bonus)
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_012
+Language: en
+User Reputation: 0.3545
+
+[MODEL_DECISION]
+classification=hate_speech | severity=high | action=remove
+
+[RATIONALE]
+Identity-targeted language detected in en corpus. Severity high based on dehumanization vectors. User has hate_speech prior violations — action: remove.
+
+[REWARD]
+Total Score: 0.8000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_013
+Language: en
+User Reputation: 0.3000
+
+[MODEL_DECISION]
+classification=violence | severity=high | action=remove
+
+[RATIONALE]
+Explicit threat language detected. NLP threat-classifier confidence >0.90. Thread escalation from verbal to physical threat. Immediate remove required.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_014
+Language: hi
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.0000
+
+[STEP]
+Post ID: med_015
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=safe | severity=low | action=flag
+
+[RATIONALE]
+No harmful signals detected. Semantic analysis confirms benign content. User reputation (1.00) supports trust threshold. Action: allow.
+
+[REWARD]
+Total Score: 0.5000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.1000
+  action_score:           0.3000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.3000
+
+[STEP]
+Post ID: med_016
+Language: en
+User Reputation: 1.0000
+
+[MODEL_DECISION]
+classification=hate_speech | severity=medium | action=remove
+
+[RATIONALE]
+Identity-targeted language detected in en corpus. Severity medium based on dehumanization vectors. User has none prior violations — action: remove.
+
+[REWARD]
+Total Score: 0.4000
+Breakdown:
+  classification_score:   0.4000
+  severity_score:         0.2000
+  action_score:           0.0000
+  escalation_score:       0.0000
+  reputation_adjustment:  0.0000
+  penalties:              0.2000  (bias_penalty: inconsistent identity-pair treatment)
+Traceback (most recent call last):
+  File "C:\Users\swathiga\Downloads\Meta_Hackathon\demo_run.py", line 198, in <module>
+    inference.main()
+  File "C:\Users\swathiga\Downloads\Meta_Hackathon\inference.py", line 336, in main
+    result = run_inference(
+             ^^^^^^^^^^^^^^
+  File "C:\Users\swathiga\Downloads\Meta_Hackathon\inference.py", line 206, in run_inference
+    obs_next, reward, done, info = env.step(action)
+                                   ^^^^^^^^^^^^^^^^
+  File "C:\Users\swathiga\Downloads\Meta_Hackathon\environment\env.py", line 267, in step
+    next_obs = _record_to_observation(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\swathiga\Downloads\Meta_Hackathon\environment\env.py", line 93, in _record_to_observation
+    content=record["content"],
+            ~~~~~~^^^^^^^^^^^
+KeyError: 'content'

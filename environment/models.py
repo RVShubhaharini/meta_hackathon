@@ -100,8 +100,6 @@ class Action(BaseModel):
     classification: ContentCategory
     severity: Severity
     action: ModerationAction
-    confidence: float = Field(default=1.0, ge=0.0, le=1.0)
-    reasoning: Optional[str] = None
 
 
 # ---------------------------------------------------------------------------
@@ -113,11 +111,10 @@ class RewardBreakdown(BaseModel):
     classification_score: float
     severity_score: float
     action_score: float
-    escalation_bonus: float
-    false_positive_penalty: float
-    missed_harmful_penalty: float
-    unnecessary_removal_penalty: float
-    bias_penalty: float
+    escalation_score: float
+    reputation_adjustment: float
+    cross_lingual_penalty: float
+    penalties: float
 
 
 # ---------------------------------------------------------------------------
@@ -127,11 +124,16 @@ class RewardBreakdown(BaseModel):
 class EpisodeState(BaseModel):
     task_id: str
     current_step: int
-    posts_processed: int
+    total_posts_processed: int
     cumulative_reward: float
-    correct_classifications: int
+    correct_moderations: int
     false_positives: int
-    false_negatives: int
-    escalations_correct: int
+    missed_harmful_content: int
+    escalation_cases: int
     bias_violations: int
+    cross_lingual_violations: int
+    precision: float
+    recall: float
+    f1_score: float
+    escalation_accuracy: float
     done: bool

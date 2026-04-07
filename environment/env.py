@@ -53,15 +53,7 @@ _TERMINAL_OBS = Observation(
 _REPUTATION_DECAY = 0.10
 
 
-def _compute_reputation(record: Dict[str, Any]) -> float:
-    """Derive a [0, 1] reputation score from the user history in the record."""
-    total = max(record.get("user_total_posts", 1), 1)
-    removed = record.get("user_removed_count", 0)
-    # Base: 1.0 minus proportional removal rate, decayed by violation count
-    violation_count = len(record.get("prior_violations", []))
-    base = 1.0 - (removed / total)
-    decayed = base - (violation_count * _REPUTATION_DECAY)
-    return round(max(0.0, min(1.0, decayed)), 4)
+
 
 
 def _record_to_observation(record: Dict[str, Any], task_id: str, step: int) -> Observation:
@@ -101,7 +93,7 @@ def _record_to_observation(record: Dict[str, Any], task_id: str, step: int) -> O
         content=record["content"],
         language=language,
         user_history=user_history,
-        user_reputation_score=_compute_reputation(record),
+        user_reputation_score=record.get('user_reputation', 1.0),
         context=context,
         metadata=metadata,
         task_id=task_id,
@@ -146,11 +138,15 @@ class ModerationEnv:
         self._current_index: int = 0
         self._current_step: int = 0
         self._cumulative_reward: float = 0.0
-        self._correct_classifications: int = 0
+        self._correct_moderations: int = 0
         self._false_positives: int = 0
-        self._false_negatives: int = 0
-        self._escalations_correct: int = 0
+        self._missed_harmful_content: int = 0
+        self._escalation_cases: int = 0
         self._bias_violations: int = 0
+        self._cross_lingual_violations: int = 0
+        self._true_positives: int = 0
+        self._correct_escalations: int = 0
+        self._expected_escalations: int = 0
         self._done: bool = False
 
     # ------------------------------------------------------------------
@@ -170,11 +166,15 @@ class ModerationEnv:
         self._current_index = 0
         self._current_step = 0
         self._cumulative_reward = 0.0
-        self._correct_classifications = 0
+        self._correct_moderations = 0
         self._false_positives = 0
-        self._false_negatives = 0
-        self._escalations_correct = 0
+        self._missed_harmful_content = 0
+        self._escalation_cases = 0
         self._bias_violations = 0
+        self._cross_lingual_violations = 0
+        self._true_positives = 0
+        self._correct_escalations = 0
+        self._expected_escalations = 0
         self._done = False
         # Fresh grader resets bias/thread tracking
         self._grader = get_grader(self._task_id)
@@ -220,25 +220,35 @@ class ModerationEnv:
         truth_act = record["expected_action"]
 
         if action.classification.value == truth_cat:
-            self._correct_classifications += 1
+            self._correct_moderations += 1
 
-        # False positive: safe content actioned
-        if truth_cat == "safe" and action.action in {
-            ModerationAction.FLAG, ModerationAction.REMOVE
-        }:
+        # Precision/Recall trackers
+        is_harmful = truth_cat != "safe"
+        agent_actioned = action.action in {ModerationAction.FLAG, ModerationAction.REMOVE, ModerationAction.ESCALATE}
+        
+        if is_harmful and agent_actioned:
+            self._true_positives += 1
+        
+        if not is_harmful and agent_actioned:
             self._false_positives += 1
+            
+        if is_harmful and not agent_actioned:
+            self._missed_harmful_content += 1
 
-        # False negative: harmful content allowed
-        if truth_cat != "safe" and action.action == ModerationAction.ALLOW:
-            self._false_negatives += 1
+        # Escalation trackers
+        if record.get("is_ambiguous"):
+            self._expected_escalations += 1
+            if action.action == ModerationAction.ESCALATE:
+                self._correct_escalations += 1
+                self._escalation_cases += 1
 
-        # Correct escalation on ambiguous posts
-        if record.get("is_ambiguous") and action.action == ModerationAction.ESCALATE:
-            self._escalations_correct += 1
-
-        # Bias violation tracking (grader populates bias_decisions)
-        if breakdown.get("bias_penalty", 0) > 0:
+        # Bias violation tracking
+        if record.get("bias_pair_id") and breakdown.get("penalties", 0) > 0:
             self._bias_violations += 1
+            
+        # Cross-lingual violation tracking
+        if breakdown.get("cross_lingual_penalty", 0) > 0:
+            self._cross_lingual_violations += 1
 
         info = {
             "ground_truth_label": truth_cat,
@@ -263,15 +273,36 @@ class ModerationEnv:
 
     def state(self) -> EpisodeState:
         """Return the current episode statistics."""
+        precision = 0.0
+        if (self._true_positives + self._false_positives) > 0:
+            precision = self._true_positives / (self._true_positives + self._false_positives)
+            
+        recall = 0.0
+        if (self._true_positives + self._missed_harmful_content) > 0:
+            recall = self._true_positives / (self._true_positives + self._missed_harmful_content)
+            
+        f1_score = 0.0
+        if (precision + recall) > 0:
+            f1_score = 2 * (precision * recall) / (precision + recall)
+            
+        esc_acc = 0.0
+        if self._expected_escalations > 0:
+            esc_acc = self._correct_escalations / self._expected_escalations
+            
         return EpisodeState(
             task_id=self._task_id,
             current_step=self._current_step,
-            posts_processed=self._current_index,
+            total_posts_processed=self._current_index,
             cumulative_reward=round(self._cumulative_reward, 4),
-            correct_classifications=self._correct_classifications,
+            correct_moderations=self._correct_moderations,
             false_positives=self._false_positives,
-            false_negatives=self._false_negatives,
-            escalations_correct=self._escalations_correct,
+            missed_harmful_content=self._missed_harmful_content,
+            escalation_cases=self._escalation_cases,
             bias_violations=self._bias_violations,
+            cross_lingual_violations=self._cross_lingual_violations,
+            precision=round(precision, 4),
+            recall=round(recall, 4),
+            f1_score=round(f1_score, 4),
+            escalation_accuracy=round(esc_acc, 4),
             done=self._done,
         )

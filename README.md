@@ -8,17 +8,18 @@
 
 1. [Project Motivation](#project-motivation)
 2. [Environment Overview](#environment-overview)
-3. [Observation Space](#observation-space)
-4. [Action Space](#action-space)
-5. [Task Descriptions](#task-descriptions)
-6. [Reward Design](#reward-design)
-7. [Advanced Features](#advanced-features)
-8. [Project Structure](#project-structure)
-9. [Setup & Installation](#setup--installation)
-10. [Running Inference](#running-inference)
-11. [Docker Usage](#docker-usage)
-12. [Hugging Face Spaces](#hugging-face-spaces)
-13. [Example Outputs](#example-outputs)
+3. [Real-World Data Integration](#real-world-data-integration)
+4. [Observation Space](#observation-space)
+5. [Action Space](#action-space)
+6. [Task Descriptions](#task-descriptions)
+7. [Reward Design](#reward-design)
+8. [Advanced Features](#advanced-features)
+9. [Project Structure](#project-structure)
+10. [Setup & Installation](#setup--installation)
+11. [Running Inference](#running-inference)
+12. [Docker Usage](#docker-usage)
+13. [Hugging Face Spaces](#hugging-face-spaces)
+14. [Example Outputs](#example-outputs)
 
 ---
 
@@ -56,10 +57,18 @@ env = ModerationEnv(task_id="task_hard")
 obs = env.reset()
 
 while True:
-    action = agent.decide(obs)        # Your agent here
-    obs, reward, done, info = env.step(action)
-    if done:
-        break
+      action = agent.decide(obs)        # Your agent here
+      obs, reward, done, info = env.step(action)
+  ```
+
+  ---
+
+  ## Real-World Data Integration
+
+  To maximize adversarial rigor and evaluate models on production-equivalent pain points, this environment explicitly integrates and simulates records drawn from **real-world benchmark corpuses**.
+
+      if done:
+          break
 
 state = env.state()
 print(f"Average reward: {state.cumulative_reward / state.posts_processed:.4f}")

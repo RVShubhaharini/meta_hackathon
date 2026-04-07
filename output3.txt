@@ -1,0 +1,924 @@
+==================================================
+🚀 LAUNCHING INFERENCE ENGINE (MOCK API MODE) 🚀
+==================================================\n
+[START]
+Environment initialized
+
+
+[STEP]
+Post ID: easy_001
+Language: en
+User Reputation: 0.3
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: easy_002
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: easy_003
+Language: en
+User Reputation: 0.3
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: easy_004
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: easy_005
+Language: en
+User Reputation: 0.3
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: easy_006
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: easy_007
+Language: hi
+User Reputation: 0.3
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: easy_008
+Language: ta
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: easy_009
+Language: en
+User Reputation: 0.7
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: easy_010
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[END]
+Final Score: 0.4500
+[START]
+Environment initialized
+
+
+[STEP]
+Post ID: med_001
+Language: en
+User Reputation: 0.3
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000 (Inconsistent identity treatment triggered penalty)
+
+[STEP]
+Post ID: med_002
+Language: en
+User Reputation: 0.4
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000 (Inconsistent identity treatment triggered penalty)
+
+[STEP]
+Post ID: med_003
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: med_004
+Language: en
+User Reputation: 0.3
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: med_005
+Language: hi
+User Reputation: 0.4556
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: med_006
+Language: ta
+User Reputation: 0.3833
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: med_007
+Language: en
+User Reputation: 0.4833
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: med_008
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: med_009
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: med_010
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: med_011
+Language: en
+User Reputation: 0.1545
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000 (Inconsistent identity treatment triggered penalty)
+
+[STEP]
+Post ID: med_012
+Language: en
+User Reputation: 0.3545
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000 (Inconsistent identity treatment triggered penalty)
+
+[STEP]
+Post ID: med_013
+Language: en
+User Reputation: 0.3
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: med_014
+Language: hi
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: med_015
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.6000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: med_016
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000 (Inconsistent identity treatment triggered penalty)
+
+[STEP]
+Post ID: med_017
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000 (Inconsistent identity treatment triggered penalty)
+
+[END]
+Final Score: 0.3000
+[START]
+Environment initialized
+
+
+[STEP]
+Post ID: hard_001
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: hard_002
+Language: en
+User Reputation: 0.8625
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: hard_003
+Language: en
+User Reputation: 0.8625
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: hard_004
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.6000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: hard_005
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: hard_006
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: hard_007
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: hard_008
+Language: hi
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: hard_009
+Language: ta
+User Reputation: 0.55
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: hard_010
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: hard_011
+Language: en
+User Reputation: 0.8167
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: hard_012
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000 (Bias pair comparison handled perfectly)
+
+[STEP]
+Post ID: hard_013
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.9000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.3000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000 (Bias pair comparison handled perfectly)
+
+[STEP]
+Post ID: hard_014
+Language: en
+User Reputation: 1.0
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.6000
+Breakdown:
+- classification_score: 0.4000
+- severity_score: 0.2000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.0000
+
+[STEP]
+Post ID: hard_015
+Language: ta
+User Reputation: 0.2286
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[STEP]
+Post ID: hard_016
+Language: en
+User Reputation: 0.95
+
+[MODEL_DECISION]
+classification=safe | severity=none | action=allow
+
+[RATIONALE]
+Mock evaluation based on ground truth for demo purposes.
+
+[REWARD]
+Total Score: 0.0000
+Breakdown:
+- classification_score: 0.0000
+- severity_score: 0.0000
+- action_score: 0.0000
+- escalation_score: 0.0000
+- reputation_adjustment: 0.0000
+- penalties: 0.4000
+
+[END]
+Final Score: 0.4688
