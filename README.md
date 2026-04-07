@@ -1,3 +1,12 @@
+---
+title: Ai Content Moderation Env
+emoji: 🦀
+colorFrom: pink
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # AI Content Moderation OpenEnv
 
 > **A production-grade OpenEnv environment simulating a real-world social media content moderation system — inspired by Meta, YouTube, and X (Twitter) Trust & Safety teams.**
