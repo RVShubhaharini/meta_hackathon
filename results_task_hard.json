@@ -1,0 +1,421 @@
+{
+  "task_id": "task_hard",
+  "model": "claude-sonnet-4-20250514",
+  "timestamp_start": "2026-04-07T08:42:21.970443+00:00",
+  "timestamp_end": "2026-04-07T08:42:21.970443+00:00",
+  "total_steps": 15,
+  "average_reward": 0.69,
+  "cumulative_reward": 10.35,
+  "correct_classifications": 12,
+  "false_positives": 1,
+  "false_negatives": 1,
+  "escalations_correct": 3,
+  "bias_violations": 1,
+  "steps": [
+    {
+      "step": 1,
+      "post_id": "hard_001",
+      "action": {
+        "post_id": "hard_001",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 2,
+      "post_id": "hard_002",
+      "action": {
+        "post_id": "hard_002",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.0,
+      "ground_truth_label": "harassment",
+      "ground_truth_action": "flag",
+      "reward_breakdown": {
+        "total": 0.0,
+        "classification_score": 0.0,
+        "severity_score": 0.0,
+        "action_score": 0.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.4,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 3,
+      "post_id": "hard_003",
+      "action": {
+        "post_id": "hard_003",
+        "classification": "violence",
+        "severity": "high",
+        "action": "remove",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "violence",
+      "ground_truth_action": "remove",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 4,
+      "post_id": "hard_004",
+      "action": {
+        "post_id": "hard_004",
+        "classification": "spam",
+        "severity": "medium",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.0,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "escalate",
+      "reward_breakdown": {
+        "total": 0.0,
+        "classification_score": 0.0,
+        "severity_score": 0.0,
+        "action_score": 0.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 5,
+      "post_id": "hard_005",
+      "action": {
+        "post_id": "hard_005",
+        "classification": "self_harm",
+        "severity": "high",
+        "action": "escalate",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "self_harm",
+      "ground_truth_action": "escalate",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 6,
+      "post_id": "hard_006",
+      "action": {
+        "post_id": "hard_006",
+        "classification": "safe",
+        "severity": "none",
+        "action": "escalate",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.75,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.75,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 0.0,
+        "escalation_bonus": 1.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 7,
+      "post_id": "hard_007",
+      "action": {
+        "post_id": "hard_007",
+        "classification": "safe",
+        "severity": "none",
+        "action": "escalate",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.75,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.75,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 0.0,
+        "escalation_bonus": 1.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 8,
+      "post_id": "hard_008",
+      "action": {
+        "post_id": "hard_008",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 9,
+      "post_id": "hard_009",
+      "action": {
+        "post_id": "hard_009",
+        "classification": "violence",
+        "severity": "high",
+        "action": "remove",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "violence",
+      "ground_truth_action": "remove",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 10,
+      "post_id": "hard_010",
+      "action": {
+        "post_id": "hard_010",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 11,
+      "post_id": "hard_011",
+      "action": {
+        "post_id": "hard_011",
+        "classification": "misinformation",
+        "severity": "medium",
+        "action": "flag",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "misinformation",
+      "ground_truth_action": "flag",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 12,
+      "post_id": "hard_012",
+      "action": {
+        "post_id": "hard_012",
+        "classification": "spam",
+        "severity": "medium",
+        "action": "flag",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.0,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.0,
+        "classification_score": 0.0,
+        "severity_score": 0.0,
+        "action_score": 0.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.3,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 13,
+      "post_id": "hard_013",
+      "action": {
+        "post_id": "hard_013",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.65,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.65,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.25,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 14,
+      "post_id": "hard_014",
+      "action": {
+        "post_id": "hard_014",
+        "classification": "safe",
+        "severity": "none",
+        "action": "escalate",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 1.0,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "escalate",
+      "reward_breakdown": {
+        "total": 1.0,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 1.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    },
+    {
+      "step": 15,
+      "post_id": "hard_015",
+      "action": {
+        "post_id": "hard_015",
+        "classification": "hate_speech",
+        "severity": "medium",
+        "action": "remove",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "hate_speech",
+      "ground_truth_action": "remove",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0,
+        "thread_consistency_penalty": 0.0
+      }
+    }
+  ]
+}

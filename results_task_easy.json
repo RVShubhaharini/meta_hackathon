@@ -1,0 +1,276 @@
+{
+  "task_id": "task_easy",
+  "model": "claude-sonnet-4-20250514",
+  "timestamp_start": "2026-04-07T08:42:21.962150+00:00",
+  "timestamp_end": "2026-04-07T08:42:21.965615+00:00",
+  "total_steps": 10,
+  "average_reward": 0.9,
+  "cumulative_reward": 9.0,
+  "correct_classifications": 10,
+  "false_positives": 0,
+  "false_negatives": 0,
+  "escalations_correct": 0,
+  "bias_violations": 0,
+  "steps": [
+    {
+      "step": 1,
+      "post_id": "easy_001",
+      "action": {
+        "post_id": "easy_001",
+        "classification": "spam",
+        "severity": "medium",
+        "action": "remove",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "spam",
+      "ground_truth_action": "remove",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 2,
+      "post_id": "easy_002",
+      "action": {
+        "post_id": "easy_002",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 3,
+      "post_id": "easy_003",
+      "action": {
+        "post_id": "easy_003",
+        "classification": "spam",
+        "severity": "medium",
+        "action": "remove",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "spam",
+      "ground_truth_action": "remove",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 4,
+      "post_id": "easy_004",
+      "action": {
+        "post_id": "easy_004",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 5,
+      "post_id": "easy_005",
+      "action": {
+        "post_id": "easy_005",
+        "classification": "spam",
+        "severity": "medium",
+        "action": "remove",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "spam",
+      "ground_truth_action": "remove",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 6,
+      "post_id": "easy_006",
+      "action": {
+        "post_id": "easy_006",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 7,
+      "post_id": "easy_007",
+      "action": {
+        "post_id": "easy_007",
+        "classification": "spam",
+        "severity": "medium",
+        "action": "remove",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "spam",
+      "ground_truth_action": "remove",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 8,
+      "post_id": "easy_008",
+      "action": {
+        "post_id": "easy_008",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 9,
+      "post_id": "easy_009",
+      "action": {
+        "post_id": "easy_009",
+        "classification": "spam",
+        "severity": "medium",
+        "action": "flag",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "spam",
+      "ground_truth_action": "flag",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    },
+    {
+      "step": 10,
+      "post_id": "easy_010",
+      "action": {
+        "post_id": "easy_010",
+        "classification": "safe",
+        "severity": "none",
+        "action": "allow",
+        "confidence": 0.95,
+        "reasoning": "Mock analysis"
+      },
+      "reward": 0.9,
+      "ground_truth_label": "safe",
+      "ground_truth_action": "allow",
+      "reward_breakdown": {
+        "total": 0.9,
+        "classification_score": 1.0,
+        "severity_score": 1.0,
+        "action_score": 1.0,
+        "escalation_bonus": 0.0,
+        "false_positive_penalty": 0.0,
+        "missed_harmful_penalty": 0.0,
+        "unnecessary_removal_penalty": 0.0,
+        "bias_penalty": 0.0
+      }
+    }
+  ]
+}

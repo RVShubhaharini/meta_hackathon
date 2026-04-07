@@ -1,0 +1,137 @@
+name: ai-content-moderation
+version: "1.0.0"
+description: >
+  A production-grade OpenEnv environment that simulates a real-world social
+  media content moderation system. An AI agent must classify posts, assess
+  severity, and decide the appropriate moderation action across three
+  increasing difficulty levels.
+
+authors:
+  - name: AI Content Moderation Team
+    email: team@moderation-env.ai
+
+license: MIT
+repository: https://github.com/example/ai-content-moderation
+
+environment:
+  class: ModerationEnv
+  module: environment.env
+  observation_type: Observation
+  action_type: Action
+  reward_type: Reward
+
+tasks:
+  - id: task_easy
+    name: Spam Detection
+    difficulty: easy
+    description: >
+      Binary classification task. The agent must identify whether a post is
+      spam or safe content, and choose between allow, flag, or remove actions.
+    num_posts: 10
+    languages: [en, hi, ta]
+    categories: [spam, safe]
+    scoring:
+      max_score: 1.0
+      deterministic: true
+      partial_credit: true
+
+  - id: task_medium
+    name: Toxicity Classification
+    difficulty: medium
+    description: >
+      Multi-class toxicity detection. The agent must classify posts into hate
+      speech, harassment, violence, misinformation, or safe — and select the
+      appropriate severity and moderation action. Includes bias detection pairs.
+    num_posts: 15
+    languages: [en, hi, ta]
+    categories: [safe, hate_speech, harassment, violence, misinformation]
+    scoring:
+      max_score: 1.0
+      deterministic: true
+      partial_credit: true
+      bias_detection: true
+
+  - id: task_hard
+    name: Contextual Moderation with Threads
+    difficulty: hard
+    description: >
+      Full contextual moderation. The agent receives conversation thread
+      context, user reputation history, and must handle ambiguous cases,
+      sarcasm, multilingual inputs, cross-thread consistency, and mental
+      health escalation scenarios.
+    num_posts: 15
+    languages: [en, hi, ta]
+    categories: [safe, hate_speech, harassment, violence, self_harm, misinformation]
+    scoring:
+      max_score: 1.0
+      deterministic: true
+      partial_credit: true
+      bias_detection: true
+      escalation_system: true
+      thread_consistency: true
+
+reward:
+  components:
+    - name: classification_score
+      weight: 0.40
+      description: Correctness of content category classification
+    - name: severity_score
+      weight: 0.25
+      description: Correctness of severity level assessment
+    - name: action_score
+      weight: 0.25
+      description: Correctness of moderation action taken
+    - name: escalation_bonus
+      weight: 0.10
+      description: Bonus for correctly escalating ambiguous cases
+
+  penalties:
+    - name: false_positive_penalty
+      value: 0.30
+      description: Penalty for flagging/removing safe content
+    - name: missed_harmful_penalty
+      value: 0.40
+      description: Penalty for allowing clearly harmful content through
+    - name: unnecessary_removal_penalty
+      value: 0.20
+      description: Penalty for removing content that only needed flagging
+    - name: bias_penalty
+      value: 0.25
+      description: Penalty for inconsistent treatment of identity-paired posts
+
+  range: [0.0, 1.0]
+  aggregation: per_step_clipped
+
+features:
+  bias_detection: true
+  multilingual: true
+  user_reputation: true
+  escalation_system: true
+  thread_context: true
+  deterministic_graders: true
+
+supported_languages:
+  - code: en
+    name: English
+  - code: hi
+    name: Hindi
+  - code: ta
+    name: Tamil
+
+baseline:
+  script: inference.py
+  model: claude-sonnet-4-20250514
+  expected_score:
+    task_easy: 0.85
+    task_medium: 0.72
+    task_hard: 0.65
+
+compute:
+  min_cpu: 1
+  min_ram_gb: 2
+  gpu_required: false
+  inference_time_minutes: 15
+
+docker:
+  base_image: python:3.11-slim
+  port: 7860
