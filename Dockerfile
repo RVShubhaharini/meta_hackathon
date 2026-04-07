@@ -23,4 +23,4 @@ ENV PYTHONDONTWRITEBYTECODE=1
 EXPOSE 7860
 
 # Default: run the FastAPI server for HF Spaces
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]
