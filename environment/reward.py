@@ -226,7 +226,8 @@ def compute_reward(
 
     base_score = c_score + s_score + a_score + e_score
     raw = base_score - pen - (cross_lingual_penalty * 0.25) + reputation_adjustment
-    reward = max(0.0, min(1.0, raw))
+    # Strict OpenEnv constraint: score must be in (0, 1)
+    reward = max(0.0001, min(0.9999, raw))
 
     breakdown = RewardBreakdown(
         total=round(reward, 4),
