@@ -152,7 +152,7 @@ def parse_action(response_text: str, post_id: str) -> Optional[Action]:
             classification=ContentCategory.SAFE,
             severity=Severity.NONE,
             action=ModerationAction.ALLOW,
-        ), 0.0, f"Parse error: {e}"
+        ), 0.001, f"Parse error: {e}"
 
 
 def log_start(task_id: str, timestamp: str):
@@ -240,8 +240,8 @@ def run_inference(task_id: str, output_path: Optional[str] = None) -> dict:
 
     state = env.state()
     avg_reward = total_reward / max(len(results), 1)
-    # Ensure strict (0, 1) range for task score
-    avg_reward = max(0.0001, min(0.9999, avg_reward))
+    # Ensure strict (0, 1) range for task score - using conservative [0.01, 0.99]
+    avg_reward = max(0.01, min(0.99, avg_reward))
 
     summary = {
         "task_id": task_id,
@@ -329,7 +329,7 @@ def main():
     for tid, score in all_results.items():
         print(f"  {tid}: {score:.4f}", file=sys.stderr)
     overall = sum(all_results.values()) / len(all_results)
-    overall = max(0.0001, min(0.9999, overall))
+    overall = max(0.01, min(0.99, overall))
     print(f"  OVERALL: {overall:.4f}", file=sys.stderr)
     print("=" * 60 + "\n", file=sys.stderr)
 

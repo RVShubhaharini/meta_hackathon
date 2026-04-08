@@ -226,15 +226,15 @@ def compute_reward(
 
     base_score = c_score + s_score + a_score + e_score
     raw = base_score - pen - (cross_lingual_penalty * 0.25) + reputation_adjustment
-    # Strict OpenEnv constraint: score must be in (0, 1)
-    reward = max(0.0001, min(0.9999, raw))
+    # Strict OpenEnv constraint: score must be in (0, 1) - using conservative [0.01, 0.99]
+    reward = max(0.01, min(0.99, raw))
 
     breakdown = RewardBreakdown(
-        total=round(reward, 4),
-        classification_score=round(c_score, 4),
-        severity_score=round(s_score, 4),
-        action_score=round(a_score, 4),
-        escalation_score=round(e_score, 4),
+        total=round(max(0.01, min(0.99, reward)), 4),
+        classification_score=round(max(0.01, min(0.99, c_score)), 4),
+        severity_score=round(max(0.01, min(0.99, s_score)), 4),
+        action_score=round(max(0.01, min(0.99, a_score)), 4),
+        escalation_score=round(max(0.01, min(0.99, e_score)), 4),
         reputation_adjustment=round(reputation_adjustment, 4),
         cross_lingual_penalty=round((cross_lingual_penalty * 0.25), 4),
         penalties=round(pen, 4),

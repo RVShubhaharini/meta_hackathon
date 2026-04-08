@@ -149,7 +149,7 @@ class HardGrader(BaseGrader):
 
         # Apply thread consistency penalty
         if thread_penalty > 0:
-            reward = max(0.0001, reward - thread_penalty)
+            reward = max(0.01, reward - thread_penalty)
             breakdown_dict = breakdown.model_dump()
             breakdown_dict["thread_consistency_penalty"] = round(thread_penalty, 4)
             breakdown_dict["total"] = round(reward, 4)

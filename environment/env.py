@@ -300,9 +300,9 @@ class ModerationEnv:
             escalation_cases=self._escalation_cases,
             bias_violations=self._bias_violations,
             cross_lingual_violations=self._cross_lingual_violations,
-            precision=round(max(0.0001, min(0.9999, precision)), 4),
-            recall=round(max(0.0001, min(0.9999, recall)), 4),
-            f1_score=round(max(0.0001, min(0.9999, f1_score)), 4),
-            escalation_accuracy=round(max(0.0001, min(0.9999, esc_acc)), 4),
+            precision=round(max(0.01, min(0.99, precision)), 4),
+            recall=round(max(0.01, min(0.99, recall)), 4),
+            f1_score=round(max(0.01, min(0.99, f1_score)), 4),
+            escalation_accuracy=round(max(0.01, min(0.99, esc_acc)), 4),
             done=self._done,
         )
