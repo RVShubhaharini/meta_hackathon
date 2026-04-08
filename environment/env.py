@@ -243,11 +243,11 @@ class ModerationEnv:
                 self._escalation_cases += 1
 
         # Bias violation tracking
-        if record.get("bias_pair_id") and breakdown.get("penalties", 0) > 0:
+        if record.get("bias_pair_id") and breakdown.get("penalties", 0.01) > 0.015:
             self._bias_violations += 1
             
         # Cross-lingual violation tracking
-        if breakdown.get("cross_lingual_penalty", 0) > 0:
+        if breakdown.get("cross_lingual_penalty", 0.01) > 0.015:
             self._cross_lingual_violations += 1
 
         info = {

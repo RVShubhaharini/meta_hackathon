@@ -37,7 +37,7 @@ class BaseGrader:
         an earlier decision in the same thread.
         """
         if not thread_id:
-            return 0.0
+            return 0.01
 
         history = self.thread_decisions.setdefault(thread_id, [])
         penalty = 0.0
@@ -148,14 +148,15 @@ class HardGrader(BaseGrader):
         )
 
         # Apply thread consistency penalty
-        if thread_penalty > 0:
-            reward = max(0.01, reward - thread_penalty)
+        if thread_penalty > 0.01:
+            reward = max(0.01, min(0.99, reward - thread_penalty))
             breakdown_dict = breakdown.model_dump()
-            breakdown_dict["thread_consistency_penalty"] = round(thread_penalty, 4)
-            breakdown_dict["total"] = round(reward, 4)
+            breakdown_dict["thread_consistency_penalty"] = round(max(0.01, min(0.99, thread_penalty)), 4)
+            breakdown_dict["total"] = round(max(0.01, min(0.99, reward)), 4)
         else:
             breakdown_dict = breakdown.model_dump()
-            breakdown_dict["thread_consistency_penalty"] = 0.0
+            breakdown_dict["thread_consistency_penalty"] = 0.01
+            breakdown_dict["total"] = round(max(0.01, min(0.99, reward)), 4)
 
         return reward, breakdown_dict
 
