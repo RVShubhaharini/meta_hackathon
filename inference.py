@@ -218,7 +218,7 @@ def run_inference(task_id: str, output_path: Optional[str] = None) -> dict:
 
         action, confidence, reasoning = parse_action(raw_response, post_id)
         obs_next, reward, done, info = env.step(action)
-        info["confidence"] = confidence
+        info["confidence"] = max(0.01, min(0.99, float(confidence)))
         info["reasoning"] = reasoning
 
         total_reward += reward
