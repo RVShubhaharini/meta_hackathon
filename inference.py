@@ -269,9 +269,9 @@ def run_inference(task_id: str, output_path: Optional[str] = None) -> dict:
             "bias_violations": state.bias_violations,
             "cross_lingual_errors": getattr(state, "cross_lingual_violations", 0),
             "escalation_cases": state.escalation_cases,
-            "precision": getattr(state, "precision", 0.0),
-            "recall": getattr(state, "recall", 0.0),
-            "f1_score": getattr(state, "f1_score", 0.0),
+            "precision": getattr(state, "precision", 0.0001),
+            "recall": getattr(state, "recall", 0.0001),
+            "f1_score": getattr(state, "f1_score", 0.0001),
         }
     }
     log_end(task_id, state_dict)
