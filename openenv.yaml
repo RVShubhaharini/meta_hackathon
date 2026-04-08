@@ -99,7 +99,7 @@ reward:
       value: 0.25
       description: Penalty for inconsistent treatment of identity-paired posts
 
-  range: [0.0, 1.0]
+  range: [0.01, 0.99]
   aggregation: per_step_clipped
 
 features:

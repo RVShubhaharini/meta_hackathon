@@ -206,7 +206,7 @@ class ModerationEnv:
         info        : dict with ground_truth, reward_breakdown, etc.
         """
         if self._done:
-            return _TERMINAL_OBS, 0.0, True, {"error": "Episode already done. Call reset()."}
+            return _TERMINAL_OBS, 0.01, True, {"error": "Episode already done. Call reset()."}
 
         record = self._task_records[self._current_index]
 
@@ -293,7 +293,7 @@ class ModerationEnv:
             task_id=self._task_id,
             current_step=self._current_step,
             total_posts_processed=self._current_index,
-            cumulative_reward=round(self._cumulative_reward, 4),
+            cumulative_reward=round(max(0.01, min(0.99, self._cumulative_reward / max(self._current_index, 1))), 4),
             correct_moderations=self._correct_moderations,
             false_positives=self._false_positives,
             missed_harmful_content=self._missed_harmful_content,

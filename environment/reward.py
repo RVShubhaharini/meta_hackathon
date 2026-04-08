@@ -235,9 +235,9 @@ def compute_reward(
         severity_score=round(max(0.01, min(0.99, s_score)), 4),
         action_score=round(max(0.01, min(0.99, a_score)), 4),
         escalation_score=round(max(0.01, min(0.99, e_score)), 4),
-        reputation_adjustment=round(reputation_adjustment, 4),
-        cross_lingual_penalty=round((cross_lingual_penalty * 0.25), 4),
-        penalties=round(pen, 4),
+        reputation_adjustment=round(max(0.01, min(0.99, reputation_adjustment + 0.5)), 4),  # Offset to keep in (0,1)
+        cross_lingual_penalty=round(max(0.01, min(0.99, (cross_lingual_penalty * 0.25))), 4),
+        penalties=round(max(0.01, min(0.99, pen)), 4),
     )
 
     return reward, breakdown
