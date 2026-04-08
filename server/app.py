@@ -251,8 +251,8 @@ def step_environment(req: StepRequest):
 
 @app.post("/evaluate")
 def evaluate_agent(task_id: str = "task_medium"):
-    if not os.environ.get("OPENAI_API_KEY"):
-        raise HTTPException(status_code=400, detail="OPENAI_API_KEY secret is not configured in Hugging Face!")
+    if not os.environ.get("API_KEY") and not os.environ.get("OPENAI_API_KEY"):
+        raise HTTPException(status_code=400, detail="API_KEY or OPENAI_API_KEY secret is not configured!")
     
     try:
         # Run the baseline agent and return its final metrics

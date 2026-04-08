@@ -40,7 +40,8 @@ from environment.models import Action, ContentCategory, ModerationAction, Severi
 
 API_BASE_URL = os.environ.get("API_BASE_URL", "https://api.anthropic.com/v1")
 MODEL_NAME = os.environ.get("MODEL_NAME", "claude-sonnet-4-20250514")
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "dummy_key_for_evaluation")
+# Priority: API_KEY (Meta proxy) > OPENAI_API_KEY (standard)
+API_KEY = os.environ.get("API_KEY") or os.environ.get("OPENAI_API_KEY") or "dummy_key_for_evaluation"
 
 SYSTEM_PROMPT = """You are an expert AI content moderation system for a social media platform.
 
@@ -175,7 +176,8 @@ def run_inference(task_id: str, output_path: Optional[str] = None) -> dict:
 
     Returns a results dict with per-step details and aggregate scores.
     """
-    client = OpenAI(base_url=API_BASE_URL, api_key=OPENAI_API_KEY)
+    print(f"  [INFO] Client: base_url={API_BASE_URL}, model={MODEL_NAME}", file=sys.stderr)
+    client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
 
     env = ModerationEnv(task_id=task_id)
     obs = env.reset()
@@ -210,7 +212,7 @@ def run_inference(task_id: str, output_path: Optional[str] = None) -> dict:
             elapsed = round(time.time() - t0, 3)
             raw_response = response.choices[0].message.content
         except Exception as e:
-            print(f"  [WARN] API network exception for {post_id}: {e}", file=sys.stderr)
+            print(f"  [ERROR] API call failed for {post_id}: {type(e).__name__}: {e}", file=sys.stderr)
             elapsed = round(time.time() - t0, 3)
             raw_response = "{}"  # triggers parse error fallback cleanly
 
@@ -298,8 +300,8 @@ def main():
     )
     args = parser.parse_args()
 
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("[WARN] OPENAI_API_KEY environment variable is not set. Using dummy key. Validating system might provide credentials via proxy.", file=sys.stderr)
+    if not os.environ.get("API_KEY") and not os.environ.get("OPENAI_API_KEY"):
+        print("[WARN] No API key (API_KEY or OPENAI_API_KEY) found. Using dummy key. Meta validator requires API_KEY to be used through their proxy.", file=sys.stderr)
 
     tasks = (
         ["task_easy", "task_medium", "task_hard"]
